@@ -1,53 +1,43 @@
- /* Sadece ana ekranı ve lüks detayları getir */
-:root {
-  --primary: #d4af37; /* Saf Altın */
-  --bg-color: #050505;
+ /* HER ŞEYİ SIFIRLA VE SADECE SOHBETİ BIRAK */
+* {
+    border: none !important;
+    box-shadow: none !important;
 }
 
 body {
-  background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%) !important;
-  color: white !important;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
+    background: #000000 !important;
+    color: #d4af37 !important; /* Altın rengi yazı */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* Giriş Alanını Görünür Yap */
-main, .chat-interface {
-  display: block !important;
-  width: 90% !important;
-  max-width: 600px !important;
-  z-index: 999;
+/* TÜM ÇİRKİN BUTONLARI VE LİSTELERİ GİZLE */
+aside, .sidebar, button, .history-section, [class*="button"], [class*="toggle"], input[type="file"] {
+    display: none !important;
 }
 
-/* Giriş Kutusu: Mermer Üzerine Altın Çizgi */
-textarea, input, [role="textbox"] {
-  display: block !important;
-  width: 100% !important;
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid var(--primary) !important;
-  color: #d4af37 !important;
-  padding: 18px !important;
-  border-radius: 15px !important;
-  font-size: 16px !important;
-  backdrop-filter: blur(10px);
+/* SADECE GİRİŞ KUTUSUNU GÖSTER VE ŞIKLAŞTIR */
+main {
+    width: 90% !important;
+    max-width: 600px !important;
 }
 
-/* Diğer Gereksiz Her Şeyi Gizle */
-aside, .sidebar, .toggle-sidebar, .history-label {
-  display: none !important;
+textarea, input[type="text"], [contenteditable="true"] {
+    display: block !important;
+    width: 100% !important;
+    background: #111 !important;
+    border: 1px solid #d4af37 !important;
+    color: gold !important;
+    padding: 20px !important;
+    border-radius: 12px !important;
+    font-size: 18px !important;
+    text-align: center;
 }
 
-/* Karşılama Yazısı */
-h1::before {
-  content: "PURELYA";
-  display: block;
-  color: var(--primary);
-  font-size: 2rem;
-  letter-spacing: 5px;
-  margin-bottom: 20px;
-  text-align: center;
+/* "ACTIVATE" UYARISINI GİZLE */
+[class*="Gateway"], .activation-overlay {
+    display: none !important;
 }
