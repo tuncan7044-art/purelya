@@ -1,33 +1,49 @@
- :root {
-  --background: #0a0a0a;
+ /* Her şeyi sıfırla ve asil bir siyah mermer tabanı oluştur */
+* {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+:root {
+  --background: #050505;
   --foreground: #ffffff;
   --primary: #d4af37; /* Saf Altın */
 }
 
 body {
-  background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%) !important;
+  background: radial-gradient(circle at center, #111 0%, #000 100%) !important;
   color: white !important;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif !important;
 }
 
-/* Gereksiz butonları ve karmaşayı temizleyelim */
-button, .toggle-sidebar, .history-label {
-  color: var(--primary) !important;
-  border-color: rgba(212, 175, 55, 0.3) !important;
+/* Tüm o çirkin butonları ve karmaşayı gizle */
+button, .toggle-sidebar, .history-label, .suggestion-box {
+  display: none !important;
 }
 
-/* Mesaj giriş alanı - Tam mermer uyumu */
-input, textarea, .ask-anything {
+/* Sadece sohbet alanını ve asil girişi bırak */
+main, .chat-container {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  padding-top: 50px !important;
+}
+
+/* Mesaj kutun: Siyah mermer hissi */
+input, textarea, [contenteditable="true"] {
+  display: block !important;
+  width: 100% !important;
   background: rgba(255, 255, 255, 0.05) !important;
   border: 1px solid var(--primary) !important;
   color: gold !important;
-  border-radius: 10px !important;
-  padding: 12px !important;
+  border-radius: 12px !important;
+  padding: 15px !important;
+  font-size: 16px !important;
 }
 
-/* Öneri kutucuklarını siyah mermer yapalım */
-.suggestion-box, .what-can-i-help {
-  background: #141414 !important;
-  border: 1px solid #222 !important;
-  border-radius: 8px !important;
+/* "Ne yardımcı olabilirim" yazısını altın yap */
+h1, .welcome-text {
+  color: var(--primary) !important;
+  text-align: center !important;
+  font-weight: 200 !important;
+  letter-spacing: 2px !important;
 }
