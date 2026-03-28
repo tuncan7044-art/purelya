@@ -46,3 +46,17 @@ h1::before {
   font-weight: 200;
   margin-bottom: 30px;
 }
+/* Aktivasyon uyarısını zorla gizle */
+div[class*="Gateway"], 
+div[class*="Activation"], 
+div[role="dialog"] {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Ekranın tıklanmasını engelleyen katmanı kaldır */
+body {
+    overflow: auto !important;
+    pointer-events: auto !important;
+}
