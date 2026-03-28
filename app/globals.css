@@ -1,49 +1,52 @@
- /* Her şeyi sıfırla ve asil bir siyah mermer tabanı oluştur */
+ /* Her şeyi sıfırla */
 * {
   border: none !important;
   box-shadow: none !important;
+  transition: none !important;
 }
 
 :root {
   --background: #050505;
-  --foreground: #ffffff;
-  --primary: #d4af37; /* Saf Altın */
+  --primary: #d4af37;
 }
 
 body {
-  background: radial-gradient(circle at center, #111 0%, #000 100%) !important;
+  background: #000000 !important;
   color: white !important;
-  font-family: 'Inter', sans-serif !important;
+  overflow-x: hidden;
 }
 
-/* Tüm o çirkin butonları ve karmaşayı gizle */
-button, .toggle-sidebar, .history-label, .suggestion-box {
+/* O çirkin "Dosya Seç" butonlarını ve yan menüyü tamamen gizle */
+input[type="file"], 
+.sidebar, 
+.toggle-sidebar, 
+.history-section,
+.suggestions-grid {
   display: none !important;
 }
 
-/* Sadece sohbet alanını ve asil girişi bırak */
-main, .chat-container {
-  max-width: 800px !important;
-  margin: 0 auto !important;
-  padding-top: 50px !important;
+/* Sohbet alanını ortaya al ve mermer gibi parlat */
+main {
+  max-width: 700px !important;
+  margin: 100px auto !important;
+  padding: 20px !important;
 }
 
-/* Mesaj kutun: Siyah mermer hissi */
-input, textarea, [contenteditable="true"] {
+/* Giriş kutusu: Siyah zemin üzerine ince altın çerçeve */
+input, textarea, .input-field {
   display: block !important;
   width: 100% !important;
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: #0a0a0a !important;
   border: 1px solid var(--primary) !important;
-  color: gold !important;
-  border-radius: 12px !important;
+  color: #d4af37 !important;
   padding: 15px !important;
-  font-size: 16px !important;
+  border-radius: 8px !important;
+  outline: none !important;
 }
 
-/* "Ne yardımcı olabilirim" yazısını altın yap */
-h1, .welcome-text {
-  color: var(--primary) !important;
+/* Yazıları güzelleştir */
+h1, p {
   text-align: center !important;
-  font-weight: 200 !important;
-  letter-spacing: 2px !important;
+  color: #d4af37 !important;
+  font-weight: 300 !important;
 }
