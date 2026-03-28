@@ -1,29 +1,33 @@
  :root {
-  --background: #050505;
+  --background: #0a0a0a;
   --foreground: #ffffff;
-  --card: #121212;
-  --primary: #d4af37; /* Lüks Altın Rengi */
-  --border: #1a1a1a;
+  --primary: #d4af37; /* Saf Altın */
 }
 
 body {
-  background: radial-gradient(circle at 50% 50%, #111 0%, #000 100%);
-  color: var(--foreground);
+  background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%) !important;
+  color: white !important;
   font-family: 'Inter', sans-serif;
-  letter-spacing: -0.01em;
 }
 
-/* Mesaj kutularına cam efekti */
-.chat-bubble {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.15);
-  border-radius: 16px;
+/* Gereksiz butonları ve karmaşayı temizleyelim */
+button, .toggle-sidebar, .history-label {
+  color: var(--primary) !important;
+  border-color: rgba(212, 175, 55, 0.3) !important;
 }
 
-/* Altın detaylı giriş alanı */
-input, textarea {
-  border: 1px solid rgba(212, 175, 55, 0.3) !important;
-  background: #080808 !important;
-  color: #d4af37 !important;
+/* Mesaj giriş alanı - Tam mermer uyumu */
+input, textarea, .ask-anything {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--primary) !important;
+  color: gold !important;
+  border-radius: 10px !important;
+  padding: 12px !important;
+}
+
+/* Öneri kutucuklarını siyah mermer yapalım */
+.suggestion-box, .what-can-i-help {
+  background: #141414 !important;
+  border: 1px solid #222 !important;
+  border-radius: 8px !important;
 }
