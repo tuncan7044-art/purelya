@@ -1,43 +1,48 @@
- /* HER ŞEYİ SIFIRLA VE SADECE SOHBETİ BIRAK */
-* {
-    border: none !important;
-    box-shadow: none !important;
+ /* Sadece Sohbeti Merkeze Al ve Gereksizleri Uçur */
+:root {
+  --primary: #d4af37;
 }
 
 body {
-    background: #000000 !important;
-    color: #d4af37 !important; /* Altın rengi yazı */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%) !important;
+  color: #d4af37 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100vh !important;
+  margin: 0 !important;
 }
 
-/* TÜM ÇİRKİN BUTONLARI VE LİSTELERİ GİZLE */
-aside, .sidebar, button, .history-section, [class*="button"], [class*="toggle"], input[type="file"] {
-    display: none !important;
+/* O "History" ve diğer küçük sarı yazıları tamamen temizleyelim */
+.history-section, .suggestions-grid, p, span:not(.chat-text) {
+  display: none !important;
 }
 
-/* SADECE GİRİŞ KUTUSUNU GÖSTER VE ŞIKLAŞTIR */
+/* Giriş Alanını Bir "Mücevher Kutusu" Yapalım */
 main {
-    width: 90% !important;
-    max-width: 600px !important;
+  width: 100% !important;
+  max-width: 600px !important;
+  text-align: center !important;
 }
 
-textarea, input[type="text"], [contenteditable="true"] {
-    display: block !important;
-    width: 100% !important;
-    background: #111 !important;
-    border: 1px solid #d4af37 !important;
-    color: gold !important;
-    padding: 20px !important;
-    border-radius: 12px !important;
-    font-size: 18px !important;
-    text-align: center;
+textarea, [role="textbox"] {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid var(--primary) !important;
+  color: gold !important;
+  border-radius: 20px !important;
+  padding: 20px !important;
+  width: 100% !important;
+  font-size: 16px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
 }
 
-/* "ACTIVATE" UYARISINI GİZLE */
-[class*="Gateway"], .activation-overlay {
-    display: none !important;
+/* "PURELYA" Başlığını Elit Bir Şekilde Ekle */
+h1::before {
+  content: "PURELYA";
+  display: block;
+  font-size: 2.5rem;
+  letter-spacing: 8px;
+  font-weight: 200;
+  margin-bottom: 30px;
 }
