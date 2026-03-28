@@ -1,51 +1,53 @@
- /* TÜM SİSTEMİ SIFIRLA VE SADELEŞTİR */
-* {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
+ /* Sadece ana ekranı ve lüks detayları getir */
 :root {
-    --background: #000000 !important;
-    --foreground: #ffffff !important;
+  --primary: #d4af37; /* Saf Altın */
+  --bg-color: #050505;
 }
 
 body {
-    background-color: #000000 !important;
-    background-image: radial-gradient(circle at 50% 50%, #151515 0%, #000000 100%) !important;
-    color: white !important;
-    overflow: hidden !important; /* Ekrandaki o saçma kaymaları bitirir */
+  background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%) !important;
+  color: white !important;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* O ÇİRKİN SOL MENÜ VE BUTONLARI YOK ET */
-aside, .sidebar, [class*="sidebar"], [class*="Toggle"], button[class*="new-chat"] {
-    display: none !important;
-    width: 0 !important;
+/* Giriş Alanını Görünür Yap */
+main, .chat-interface {
+  display: block !important;
+  width: 90% !important;
+  max-width: 600px !important;
+  z-index: 999;
 }
 
-/* SADECE SOHBETİ ORTALA */
-main {
-    max-width: 750px !important;
-    margin: 50px auto !important;
-    background: transparent !important;
-}
-
-/* GİRİŞ KUTUSU: SİYAH MERMER ÜZERİ ALTIN ÇERÇEVE */
+/* Giriş Kutusu: Mermer Üzerine Altın Çizgi */
 textarea, input, [role="textbox"] {
-    background: #0a0a0a !important;
-    border: 1.5px solid #d4af37 !important; /* Altın rengi */
-    color: #d4af37 !important;
-    border-radius: 12px !important;
-    padding: 20px !important;
-    width: 100% !important;
-    display: block !important;
+  display: block !important;
+  width: 100% !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--primary) !important;
+  color: #d4af37 !important;
+  padding: 18px !important;
+  border-radius: 15px !important;
+  font-size: 16px !important;
+  backdrop-filter: blur(10px);
 }
 
-/* "NE YARDIMCI OLABİLİRİM" YAZISINI ŞIKLAŞTIR */
-h1, .welcome-text {
-    color: #d4af37 !important;
-    font-family: 'Inter', sans-serif !important;
-    letter-spacing: 1px !important;
-    text-transform: uppercase !important;
-    font-size: 1.2rem !important;
+/* Diğer Gereksiz Her Şeyi Gizle */
+aside, .sidebar, .toggle-sidebar, .history-label {
+  display: none !important;
+}
+
+/* Karşılama Yazısı */
+h1::before {
+  content: "PURELYA";
+  display: block;
+  color: var(--primary);
+  font-size: 2rem;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+  text-align: center;
 }
