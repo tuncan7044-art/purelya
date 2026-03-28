@@ -1,52 +1,51 @@
- /* Her şeyi sıfırla */
+ /* TÜM SİSTEMİ SIFIRLA VE SADELEŞTİR */
 * {
-  border: none !important;
-  box-shadow: none !important;
-  transition: none !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 :root {
-  --background: #050505;
-  --primary: #d4af37;
+    --background: #000000 !important;
+    --foreground: #ffffff !important;
 }
 
 body {
-  background: #000000 !important;
-  color: white !important;
-  overflow-x: hidden;
+    background-color: #000000 !important;
+    background-image: radial-gradient(circle at 50% 50%, #151515 0%, #000000 100%) !important;
+    color: white !important;
+    overflow: hidden !important; /* Ekrandaki o saçma kaymaları bitirir */
 }
 
-/* O çirkin "Dosya Seç" butonlarını ve yan menüyü tamamen gizle */
-input[type="file"], 
-.sidebar, 
-.toggle-sidebar, 
-.history-section,
-.suggestions-grid {
-  display: none !important;
+/* O ÇİRKİN SOL MENÜ VE BUTONLARI YOK ET */
+aside, .sidebar, [class*="sidebar"], [class*="Toggle"], button[class*="new-chat"] {
+    display: none !important;
+    width: 0 !important;
 }
 
-/* Sohbet alanını ortaya al ve mermer gibi parlat */
+/* SADECE SOHBETİ ORTALA */
 main {
-  max-width: 700px !important;
-  margin: 100px auto !important;
-  padding: 20px !important;
+    max-width: 750px !important;
+    margin: 50px auto !important;
+    background: transparent !important;
 }
 
-/* Giriş kutusu: Siyah zemin üzerine ince altın çerçeve */
-input, textarea, .input-field {
-  display: block !important;
-  width: 100% !important;
-  background: #0a0a0a !important;
-  border: 1px solid var(--primary) !important;
-  color: #d4af37 !important;
-  padding: 15px !important;
-  border-radius: 8px !important;
-  outline: none !important;
+/* GİRİŞ KUTUSU: SİYAH MERMER ÜZERİ ALTIN ÇERÇEVE */
+textarea, input, [role="textbox"] {
+    background: #0a0a0a !important;
+    border: 1.5px solid #d4af37 !important; /* Altın rengi */
+    color: #d4af37 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    width: 100% !important;
+    display: block !important;
 }
 
-/* Yazıları güzelleştir */
-h1, p {
-  text-align: center !important;
-  color: #d4af37 !important;
-  font-weight: 300 !important;
+/* "NE YARDIMCI OLABİLİRİM" YAZISINI ŞIKLAŞTIR */
+h1, .welcome-text {
+    color: #d4af37 !important;
+    font-family: 'Inter', sans-serif !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    font-size: 1.2rem !important;
 }
